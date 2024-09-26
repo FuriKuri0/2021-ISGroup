@@ -1,0 +1,147 @@
+.home {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* 广告栏 */
+.home-banner {
+    width: 100%;
+    height: 20%;
+    margin: 0 0 10px 0;
+    background-color: #773D31;
+}
+
+.home-banner>img {
+    width: 100%;
+}
+
+/* 内容框 */
+.home-content {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 24px;
+    padding: 20px;
+    background-color: #FCFCFC;
+}
+
+/* 内容框头部 */
+.home-content-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+
+.home-content-head-left {
+    font-size: 24px;
+    color: black;
+}
+
+.home-content-head-left>img {
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: calc(-6px);
+}
+
+.home-content-head-right {
+    font-size: 16px;
+    color: black;
+}
+
+.home-content-head-right>img {
+    vertical-align: calc(-3px);
+}
+
+.home-content-head-right:hover {
+    color: black;
+}
+
+/* 内容框身体部分 */
+
+.home-content-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.home-book {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.home-book>img {
+    width: 12vw;
+    height: 16vw;
+    background-color: #773D31;
+}
+
+.home-book>img:hover {
+    cursor: pointer;
+}
+
+.home-book-titleAndPonit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 10px 16px 0 12px;
+}
+
+.home-book-title {
+    font-size: 14px;
+    font-weight: 700;
+    color:#101010
+}
+
+.home-book-point {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FEBA07;
+}
+
+.home-book-authorAndTag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 11px 11px 14px 12px;
+    font-size: 12px;
+}
+
+.home-book-author {
+    font-size: 12px;
+    color: #101010;
+}
+
+.home-book-tag {
+    width: 72px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #FCFCFC;
+    background-color: #773D31;
+}
+
+.home-guessYouLike>.home-book {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width:1601px) {
+    .home-book>img {
+        background-color: #ff2600;
+    }
+}
+
+@media screen and (max-width:1401x) and (max-width:1600px) {
+    .home-book>img {
+        background-color: #00ff08;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    .home-book>img {
+        background-color: #8000ff;
+    }
+}

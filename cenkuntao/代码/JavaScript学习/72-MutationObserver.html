@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>MutationObserver</p>
+        <p>MutationObserver</p>
+    </div>
+    <script>
+        // 实例化MutationObserver对象
+        let observer = new MutationObserver((mutationRecords) => {
+            console.log(mutationRecords);
+        })
+
+        const div = document.querySelector(`div`);
+        const p = document.querySelectorAll(`p`)[0];
+        const text = p.firstChild;
+
+        observer.observe(div, {
+            attributes: true,
+            childList: true
+        });
+        observer.observe(text, {
+            characterData: true
+        });
+
+        // 添加属性
+        div.setAttribute(`foo`, `bar`);
+
+        // 增添节点
+        let p1 = p.cloneNode(true);
+        div.appendChild(p1);
+
+        // 改变文本
+        text.textContent = `delete`;
+
+        // (3) [MutationRecord, MutationRecord, MutationRecord]
+    </script>
+</body>
+
+</html>

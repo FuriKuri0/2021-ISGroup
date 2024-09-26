@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="div1">
+        <p><b>Hello</b> world!</p>
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
+    </div>
+    <script>
+        const div = document.querySelector(`div`);
+        // 设置过滤器 仅过滤li标签1
+        const filter = function(node) {
+            return node.tagName.toLowerCase() == `li` ?
+                NodeFilter.FILTER_ACCEPT :
+                NodeFilter.FILTER_SKIP;
+        };
+        // 创建实例 指定数值代码为SHOW_ELEMENT 过滤器filter
+        const iterator = document.createNodeIterator(div, NodeFilter.SHOW_ELEMENT, filter, false);
+
+        let node = iterator.nextNode();
+        while (node != null) {
+            // 打印标签名
+            console.log(node.tagName);
+            node = iterator.nextNode();
+        }
+    </script>
+</body>
+
+</html>

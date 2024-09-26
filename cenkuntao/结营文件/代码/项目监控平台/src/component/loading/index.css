@@ -1,0 +1,7 @@
+.ant-spin,
+.ant-spin-spinning,
+.ant-spin-show-text {
+    position: absolute;
+    z-index: 9999999999999999;
+    background: rgba(0, 0, 0, 0) !important;
+}

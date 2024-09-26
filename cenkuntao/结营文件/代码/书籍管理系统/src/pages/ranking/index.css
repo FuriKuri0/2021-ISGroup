@@ -1,0 +1,249 @@
+li {
+    list-style: none
+}
+
+
+em,
+i {
+    font-style: normal
+}
+
+.Ranking {
+    position: absolute;
+    /* left: 50%;
+    transform: translateX(-40%); */
+    margin-left: 160px;
+    margin-top: 10px;
+}
+
+.Ranking-top {
+    width: 800px;
+    height: 188px;
+    background: #FCFCFC;
+}
+
+.Ranking-nav {
+    position: absolute;
+    width: 800px;
+    left: 50%;
+}
+
+.Ranking-nav li {
+    float: left;
+    margin-right: 10px;
+    width: 120px;
+    height: 40px;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    color: #101010;
+    background: #D9D9D9;
+    border-radius: 61px;
+}
+
+.Ranking-nav li:hover {
+    cursor: pointer;
+}
+
+.Ranking-nav li a {
+    display: block;
+    width: 120px;
+    height: 40px;
+    border-radius: 61px;
+    color: #101010;
+}
+
+.Ranking-nav li .active {
+    background: #773D31;
+    color: #FCFCFC;
+}
+
+.Ranking-list {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-45%,0);
+    /* background-color: pink; */
+}
+
+.Ranking img {
+    display: block;
+    width: 216px;
+    height: 288px;
+    margin-top: 4px;
+    border-radius: 8px;
+}
+
+.Ranking-Rank {
+    font-size: 22px;
+    margin-left: -42px;
+    margin-top: -25px;
+    margin-bottom: 14px;
+}
+
+.Ranking .ant-list-item-meta-title {
+    position: absolute;
+    width: 156px;
+    height: 18px;
+    left: 217px;
+    top: 54px;
+
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #101010;
+}
+
+.Ranking-author {
+    margin-left: -42px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.Ranking-jianjie {
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;
+    color: #101010;
+}
+
+.Ranking-text {
+    position: absolute;
+    width: 450px;
+    left: 240px;
+    top: 171px;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #101010;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*弹性伸缩盒子模型显示*/
+    display: -webkit-box;
+    /*限制在一个块元素显示的文本的行数,行数自己定*/
+    -webkit-line-clamp: 6;
+    /*设置或检索伸缩盒对象的子元素的排列方式*/
+    -webkit-box-orient: vertical;
+}
+
+.Ranking .ant-list-item-action {
+    position: absolute;
+    width: 300px;
+    left: 462px;
+    top: 244px;
+}
+
+.Ranking .ant-col {
+    padding-left: -360px;
+}
+
+.Ranking .ant-space-item {
+    font-size: 22px;
+}
+
+.Ranking-label {
+    position: absolute;
+    top: 63px;
+    left: 30px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.Ranking-tag {
+    position: absolute;
+    height: 20px;
+    left: 71px;
+    top: 61px;
+    padding: 0 5px;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height */
+    text-align: center;
+    color: #FCFCFC;
+    background: #773D31;
+    border-radius: 59px;
+}
+
+.Ranking-line {
+    position: absolute;
+    width: 253px;
+    height: -3px;
+    left: 578px;
+    top: 141px;
+
+    border: 0.5px solid #979797;
+    transform: rotate(90deg);
+}
+
+.Ranking-score {
+    position: absolute;
+    width: 55px;
+    height: 48px;
+    left: 798px;
+    top: 46px;
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #FEBA07;
+}
+
+.Ranking-scorepople {
+    position: absolute;
+    width: 109px;
+    height: 18px;
+    left: 781px;
+    top: 104px;
+
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.Ranking-imf li {
+    width: 52px;
+    margin-right: 14px;
+    float: left;
+}
+
+.Ranking-imf {
+    position: absolute;
+    right: -294px;
+    top: 8px;
+
+}
+
+
+.ant-list-grid .ant-col>.ant-list-item {
+    /* background-color: pink; */
+    max-width: 200% !important;
+    width: 1000px;
+
+    background: #FCFCFC;
+    border-radius: 8px;
+}

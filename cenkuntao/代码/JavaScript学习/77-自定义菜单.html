@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #myMenu {
+            position: absolute;
+            visibility: hidden;
+            border: 1px solid rgba(0, 0, 0, .3);
+        }
+        
+        #myMenu li {
+            list-style: none;
+        }
+    </style>
+    <div id="myDiv">right click or ctrl+click me to get a custom context menu.</div>
+    <ul id="myMenu">
+        <li>
+            <a href="https://www.baidu.com/">百度</a>
+        </li>
+        <li>
+            <a href="https://www.bilibili.com/">b站</a>
+        </li>
+        <li>
+            <a href="https://juejin.cn/">掘金</a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/zh-CN/">mdn</a>
+        </li>
+    </ul>
+    <script>
+        window.addEventListener(`load`, (event) => {
+            const div = document.querySelector(`#myDiv`);
+
+            // 给指定元素注册contextmenu事件 这是本来的菜单事件
+            div.addEventListener(`contextmenu`, (event) => {
+                // 取消默认的菜单事件冒泡
+                event.preventDefault();
+
+                // 显示自定义的菜单
+                const menu = document.querySelector(`#myMenu`);
+                // 使菜单跟随鼠标
+                menu.style.left = `${event.clientX}px`;
+                menu.style.top = `${event.clientY}px`;
+                menu.style.visibility = `visible`;
+            });
+
+            // 给文档注册点击事件 使左键单击时自定义菜单消失
+            document.addEventListener(`click`, (event) => {
+                document.querySelector(`#myMenu`).style.visibility = `hidden`;
+            });
+        });
+    </script>
+</body>
+
+</html>

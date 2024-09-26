@@ -1,0 +1,121 @@
+/* 分类界面 */
+.search {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #F4F4F4;
+}
+
+/* 分类头部 */
+.search-head {
+    width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto 20px;
+    padding: 20px 20px 15px 20px ;
+    background-color: #FCFCFC;
+}
+
+.search-title {
+    margin: 13px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+.search-tag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 1100px;
+    margin-left: 10px;
+}
+
+.search-tag>li {
+    width: 100px;
+    height: 24px;
+    border-radius: 12px;
+    margin: 0 20px 5px 0;
+    font-size: 14px;
+    text-align: center;
+    line-height: 24px;
+    color: #FCFCFC;
+    background-color: #d9d9d9;
+}
+
+.search-tag>li:hover {
+    cursor: pointer;
+    background-color: #773D31;
+}
+
+/* 内容框 */
+
+.search-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.search-book {
+    width: 216px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.search-book:hover {
+    cursor: pointer;
+}
+
+.search-book-nameAndScore {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 10px 16px 0 12px;
+}
+
+.search-book-name {
+    font-size: 14px;
+    font-weight: 700;
+    color:#101010
+}
+
+.search-book-score {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FEBA07;
+}
+
+.search-book-authorAndType {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 11px 11px 14px 12px;
+    font-size: 12px;
+}
+
+.search-book-author {
+    font-size: 12px;
+    color: #101010;
+}
+
+.search-book-type {
+    width: 72px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #FCFCFC;
+    background-color: #773D31;
+}
+
+.search-guessYouLike>.search-book {
+    margin-bottom: 20px;
+}
+
+.ant-pagination {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:;" name="aaa"></a>
+    <script>
+        // 文档中所有a标签
+        let as = document.anchors;
+        let length = document.anchors.length;
+        console.log(as, length); // HTMLCollection [a, aaa: a] 1
+
+        // 复制并添加a标签在文档中
+        let a2 = document.querySelectorAll(`a`);
+        let a3 = a2[0].cloneNode();
+        let script = document.querySelector(`script`);
+        script.appendChild(a3);
+        console.log(as, length); // HTMLCollection(2) [a, a, aaa: a] 1
+    </script>
+    <a href="javascript:;" name="aaa"></a>
+    <script>
+        console.log(as, length); // HTMLCollection(3) [a, a, a, aaa: a] 1
+        // 确实会实时更新的 不必手动再获取一次 就连被赋值的变量都是如此
+        // 直接被HTMLCollection赋值的变量是会实时更新的
+        // 但是HTMLCollection的长度赋值的变量并不会实时更新
+    </script>
+</body>
+
+</html>

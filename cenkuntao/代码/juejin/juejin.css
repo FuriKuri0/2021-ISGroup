@@ -1,0 +1,240 @@
+/* 初始化 */
+
+* {
+    /* 清除内外边距 */
+    margin: 0;
+    padding: 0;
+}
+
+em,
+i {
+    /* 把em和i斜体的文字不倾斜 */
+    font-style: normal;
+}
+
+li {
+    /* 清除li的小圆点 */
+    list-style: none;
+}
+
+img {
+    /* border: 0;照顾低版本浏览器,如果图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底部的空白 */
+    vertical-align: middle;
+}
+
+button {
+    /* 当鼠标经过button按钮时，鼠标变成小手 */
+    cursor: pointer;
+}
+
+a {
+    /* 改变链接文字颜色并取消下划线 */
+    color: #636363;
+    text-decoration: none;
+}
+
+a:hover {
+    /* 鼠标经过，文字变红 */
+    color: #8679dc;
+    cursor: pointer;
+}
+
+button,
+input {
+    /* 输入字体家族 */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+}
+
+body {
+    /* CSS3 抗锯齿形 文字放大的时候更清晰 */
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(255, 255, 255);
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #636363
+}
+
+
+/* 添加了hide 或者none 类的隐藏 */
+
+.hide,
+.none {
+    display: none
+}
+
+
+/* 清除浮动 */
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?n34pi0');
+    src: url('fonts/icomoon.eot?n34pi0#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?n34pi0') format('truetype'), url('fonts/icomoon.woff?n34pi0') format('woff'), url('fonts/icomoon.svg?n34pi0#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, .05);
+}
+
+nav {
+    width: 100%;
+    height: 105px;
+    background-color: antiquewhite;
+}
+
+
+/* 内容 */
+
+article {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    height: 800px;
+    width: 955px;
+}
+
+
+/* 左边 */
+
+article .left {
+    width: 700px;
+    background-color: #fff;
+}
+
+article .left .top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 45px;
+    padding-left: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background-color: #fff
+}
+
+article .left .top li {
+    padding: 0px 12px;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+article .left .bottom {
+    padding-left: 12px;
+}
+
+article .left .bottom>li {
+    height: 110px;
+    margin: 12px;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background-color: #fff;
+}
+
+article .left .bottom>li .info {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 12px;
+}
+
+article .left .bottom>li .info .author {
+    padding-right: 12px;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+article .left .bottom>li .info .time {
+    padding: 0px 12px;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+article .left .bottom>li .info .type {
+    padding: 0px 12px;
+}
+
+article .left .bottom>li .title {
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+article .left .bottom>li .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*弹性伸缩盒子模型显示*/
+    display: -webkit-box;
+    /*限制在一个块元素显示的文本的行数,行数自己定*/
+    -webkit-line-clamp: 1;
+    /*设置或检索伸缩盒对象的子元素的排列方式*/
+    -webkit-box-orient: vertical;
+}
+
+
+/* 右边 */
+
+article .right {
+    width: 235px;
+}
+
+article .right>div {
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+article .right .first {
+    height: 60px;
+    padding: 15px;
+}
+
+article .right .first .top {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+article .right .first .top p {
+    line-height: 36px;
+    margin-left: 12px;
+}
+
+article .right .first .top a {
+    padding: 3px 5px;
+    margin-left: 52px;
+    border-radius: 20px;
+    border: 1px solid #9098c4;
+    color: #9098c4;
+    font-size: 16px;
+}
+
+article .right .first .bottom {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+article .right .second {
+    height: 196px;
+}
+
+article .right .third {
+    height: 196px;
+}
+
+article .right .forth {
+    height: 75px;
+}

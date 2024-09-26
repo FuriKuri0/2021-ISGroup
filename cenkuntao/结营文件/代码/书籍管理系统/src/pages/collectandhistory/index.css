@@ -1,0 +1,111 @@
+/* 分类界面 */
+.collectionAndHistory {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #F4F4F4;
+}
+
+/* 分类头部 */
+.collectionAndHistory-head {
+    width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto 20px;
+    padding: 25px 20px 15px 20px ;
+    background-color: #FCFCFC;
+}
+
+.collectionAndHistory-tag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 1100px;
+    margin-left: 50px;
+}
+
+.collectionAndHistory-tag>li {
+    height: 24px;
+    margin: 0 20px 0 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: rgba(16, 16, 16, 1);
+    background-color: rgba(252, 252, 252, 1)!important;
+}
+
+.collectionAndHistory-tag>li:hover {
+    cursor: pointer;
+    font-weight: 700;
+    color: #773D31;
+}
+
+/* 内容框 */
+
+.collectionAndHistory-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.collectionAndHistory-book {
+    width: 216px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.collectionAndHistory-book:hover {
+    cursor: pointer;
+}
+
+.collectionAndHistory-book-nameAndScore {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 10px 16px 0 12px;
+}
+
+.collectionAndHistory-book-name {
+    font-size: 14px;
+    font-weight: 700;
+    color:#101010
+}
+
+.collectionAndHistory-book-score {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FEBA07;
+}
+
+.collectionAndHistory-book-authorAndType {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 11px 11px 14px 12px;
+    font-size: 12px;
+}
+
+.collectionAndHistory-book-author {
+    font-size: 12px;
+    color: #101010;
+}
+
+.collectionAndHistory-book-type {
+    width: 72px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #FCFCFC;
+    background-color: #773D31;
+}
+
+.collectionAndHistory-guessYouLike>.collectionAndHistory-book {
+    margin-bottom: 20px;
+}
+
+.ant-pagination {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}

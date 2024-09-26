@@ -1,0 +1,24 @@
+async function foo() {
+    console.log(2);
+    console.log(await Promise.resolve(8));
+    console.log(9);
+}
+
+async function bar() {
+    console.log(4);
+    console.log(await Promise.resolve(6));
+    console.log(7);
+}
+
+console.log(1);
+foo();
+console.log(3);
+bar();
+// 1
+// 2
+// 3
+// 4
+// 8
+// 9
+// 6
+// 7

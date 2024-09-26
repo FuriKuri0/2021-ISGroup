@@ -1,0 +1,49 @@
+## 全局唯一ID生成器
+
+ID的格式。序列号用来区分同一秒下的不同的ID，以确保唯一性
+
+![](https://raw.githubusercontent.com/JIaaoooo/ImageHostingService/main/img/ID%E7%94%9F%E6%88%90%E5%99%A8.png)
+
+实现代码：
+
+```java
+
+@Component
+public class RedisIdWorker {
+
+
+    //202211.0.0的时间戳
+    private static final long BEGIN_TIMESTAMP = 1640995200L;
+
+    private static final int COUNT_BITS = 32;
+
+    private StringRedisTemplate stringRedisTemplate;
+
+    public RedisIdWorker(StringRedisTemplate stringRedisTemplate) {
+        this.stringRedisTemplate = stringRedisTemplate;
+    }
+
+    /**
+     * 获取当前业务的唯一ID
+     * @param keyPrefix 业务前缀，以便区分不同的业务
+     * @return
+     */
+    public long nextID(String keyPrefix){
+
+        //1.生成时间戳
+        LocalDateTime now = LocalDateTime.now();
+        long nowSecond = now.toEpochSecond(ZoneOffset.UTC);
+        long timeStamp = nowSecond - BEGIN_TIMESTAMP;
+
+
+        //2.生成序列号
+        //2.1，获取当天时间，精确大天（由于如果ID一直自增长，Redis可能承受不下，添加日期，每天从0开始自增）
+        String date = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        //2.2自增长
+        Long count = stringRedisTemplate.opsForValue().increment("icr:" + keyPrefix + ":" + date);
+
+        return timeStamp << COUNT_BITS | count;
+
+    }
+```
+

@@ -1,0 +1,29 @@
+.manageUser {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(2vh + 64px);
+    width: 90%;
+    height: 85%;
+    overflow: auto;
+}
+
+.manageUser::-webkit-scrollbar {
+    width: 0;
+}
+
+.manageUser-title {
+    font-size: 1.8111vw;
+    background: rgba(0, 0, 0, 0);
+    width: 0;
+    /* margin-top: 10vh; */
+}
+
+tr .ant-table {
+    background: rgb(238, 249, 253);
+}
+
+td .ant-table-cell-row-hover {
+    background: rgb(195, 239, 255) !important;
+}

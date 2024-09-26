@@ -1,0 +1,36 @@
+.Myauthorization {
+    margin-left: 30px;
+}
+
+.Myauthorization-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.Myauthorization-limit {
+    width: 1137px;
+}
+
+.Myauthorization-addshoquuan:hover {
+    cursor: pointer;
+    color: rgb(30, 109, 194);
+}
+
+.Myauthorization-addshoquuan {
+    position: absolute;
+    z-index: 1000;
+    width: 100px;
+    top: 17px;
+    left: 726px;
+    transition: all .3s;
+}

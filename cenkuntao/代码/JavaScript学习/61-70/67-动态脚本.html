@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>hello world!</div>
+    <script>
+        // 传两个参数没什么意思的 因为script标签是插入到body的最后面才是最好的
+        // 或者插入到head中 然后在script代码中使用onload就好了
+        function loadScript(url, element) {
+            let script = document.createElement(`script`);
+            script.src = url;
+            element.appendChild(script);
+        }
+
+        loadScript('./67-动态脚本.js', document.body);
+    </script>
+</body>
+
+</html>

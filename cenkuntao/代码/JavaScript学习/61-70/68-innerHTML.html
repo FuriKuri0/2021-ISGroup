@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <p>today is a beautiful day</p>
+        <ul>
+            <li>play a game</li>
+            <li>have a sleep</li>
+            <li>make a study</li>
+        </ul>
+        <button>插入</button>
+    </div>
+    <script>
+        const content = document.querySelector(`.content`);
+        const btn = document.querySelector(`button`);
+
+        btn.addEventListener('click', () => {
+            content.innerHTML = `<p>tomorrow is a beautiful day<p>`;
+        })
+    </script>
+</body>
+
+</html>

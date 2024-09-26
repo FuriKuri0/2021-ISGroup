@@ -1,0 +1,99 @@
+.dlzc-leftImg {
+    position: absolute;
+    width: 59.75vw;
+    height: 93.4722vh;
+    left: 0.4167vw;
+    top: 6.4306vh;
+}
+
+
+
+
+.dlzc-box {
+    position: absolute;
+    width: 25.8611vw;
+    height: 53vh;
+    bottom: 20vh;
+    left: 65vw;
+
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.dlzc-nameLogin {
+    position: absolute;
+    width: 8.3333vw;
+    /* height: 10vh; */
+    left: 4.2vw;
+    top: 6vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3889vw;
+    line-height: 1.6667vw;
+    letter-spacing: 0.035em;
+
+    transition: all 0.3s;
+
+    /* 分类/未选中 */
+
+    color: #848484;
+}
+
+.dlzc-nameLogin:hover {
+    cursor: pointer;
+    color: #3D6DB5;
+}
+
+.dlzc-mailLoign:hover {
+    cursor: pointer;
+    color: #3D6DB5;
+}
+
+.dlzc-mailLoign {
+    position: absolute;
+    width: 8.3333vw;
+    /* height: 10vh; */
+    left: 15vw;
+    top: 6vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3889vw;
+    line-height: 1.6667vw;
+    letter-spacing: 0.035em;
+
+    transition: all 0.3s;
+    color: #848484;
+}
+
+.dlzc-line {
+    position: absolute;
+    width: 22.9167vw;
+    height: 0px;
+    left: 1.5vw;
+    top: 11vh;
+
+    /* 分割线 */
+
+    border: 1px solid #D9D9D9;
+}
+
+.dlzc-registerBtn {
+    position: absolute;
+    bottom: 10vh;
+    z-index: 1;
+    left: 2.5vw;
+    font-size: 0.875vw;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(4, 62, 234);
+    border: 0;
+}
+
+.dlzc-registerBtn:hover {
+    cursor: pointer;
+}

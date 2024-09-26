@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 如果是没有这么准确地包含着要高亮关键词的标签
+    可以使用正则表达式 将所有内容遍历一次 筛选出关键词
+    将每一个关键词赋给变量 添加到范围中
+    使用surroundContents将高亮span插入就好了
+    至于如何遍历内容 可以用NodeIterator从根节点开始遍历 稍后自己试一试 -->
+    <p id="p1"><b>hello</b>world!</p>
+    <script>
+        let p1 = document.getElementById(`p1`),
+            helloNode = p1.firstChild.firstChild,
+            worldNode = p1.lastChild,
+            // 实例化一个范围
+            range = document.createRange();
+
+        // 使range包含helloNode
+        range.selectNode(helloNode);
+        const span = document.createElement(`span`);
+        span.style.backgroundColor = `yellow`;
+        // 提取出范围的内容
+        // 在原始文档中范围之前所在的位置插入给定的节点
+        // 将范围对应文档片段的内容添加给定节点
+        range.surroundContents(span);
+        console.log(p1.innerHTML);
+        // <b><span style="background-color: yellow;">hello</span></b>world!
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期约取消</title>
+</head>
+
+<body>
+    <button id="strat">Satrt</button>
+    <button id="cancel">Cancel</button>
+
+    <script>
+        // 取消令牌 定义了一个类
+        class CancelToken {
+
+            // 对该类的构造函数进行设置 实例化的时候要执行的是这个构造函数
+            // 下文中一个箭头函数作为参数传了进来 也就是说 箭头函数===cancelFn是true的
+            constructor(cancelFn) {
+
+                console.log(cancelFn);
+                // 下面是cancelFn的打印结果 可以看到 这完全就是那个箭头函数
+                // (cancelCallback) =>
+                //     // 点击撤销按钮 执行cancelCallback函数
+                //     // 打印delay cancelled
+
+                //     cancelButton.addEventListener(`click`, cancelCallback)
+
+                // 这个promise是所有实例都会私有一个的 实例化了一个期约
+                this.promise = new Promise((resolve, reject) => {
+
+                    // 这个函数的参数是箭头函数B 而这个函数本身是箭头函数A
+                    // 因此 cancelCallback就是箭头函数B 
+                    // 即 点击了cancel键后 回调函数就是箭头函数B
+                    cancelFn(() => {
+                        // 设置了一个尽快执行的定时器 内容加入信息队列
+                        setTimeout(console.log, 0, `delay cancelled`);
+                        // 手动解决
+                        resolve();
+                    });
+                });
+            }
+        }
+
+        const stratButton = document.querySelector(`#strat`);
+        const cancelButton = document.querySelector(`#cancel`);
+
+        // 可取消延迟解决函数(期约可取消）
+        function cancellableDelayedResolve(delay) {
+            // 定时器 尽快执行 打印`set dalay` 意味着延迟已经设置 这是加入到了信息队列里面的
+            setTimeout(console.log, 0, `set delay`);
+
+            // 整个函数的返回值 是一个期约实例
+            return new Promise((resolve, reject) => {
+                // 定义了一个由id的定时器 此定时器设置了延迟 delay是什么参数？？？
+                const id = setTimeout((() => {
+                    // 定时器内部又定义了一个定时器 延迟为0 但是还是得加入信息队列  到时打印delay resolve
+                    setTimeout(console.log, 0, `delay resolve`);
+                    // 手动解决
+                    resolve();
+                }), delay);
+
+                // 实例化一个CancelToken对象 
+                // 传入的参数是一个箭头函数 箭头函数的参数是cancelCallback 
+                // 至于callback是什么 得看类构造函数
+                const cancelToken = new CancelToken((cancelCallback) =>
+                    // 点击撤销按钮 执行cancelCallback函数
+                    // 打印delay cancelled
+
+                    cancelButton.addEventListener(`click`, cancelCallback));
+
+                // 撤销令牌的期约对象的处理方法 清除名为id的定时器
+                cancelToken.promise.then(() => clearTimeout(id));
+            });
+        }
+
+        // 点击开始按钮 执行函数cancellableDelayedSolve 并传入参数1000 可取消延迟解决函数
+        stratButton.addEventListener(`click`, () => cancellableDelayedResolve(1000));
+    </script>
+</body>
+
+</html>

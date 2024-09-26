@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let parentElement = document.getElementById(`parent`);
+        // firstElementChild 指向第一个element类型的子元素
+        let currentChildElement = document.parentElement.firstElementChild;
+
+        // 若没有子元素 firstElementChild返回null 退出循环
+        while (currentChildElement) {
+
+            // 这就是元素节点 做相应处理
+            processChild(currentChildElement);
+
+            if (currentChildElement === parentElement.lastElementChild) {
+                break;
+            } else {
+                currentChildElement = currentChildElement.nextElementSibling;
+            }
+        }
+    </script>
+</body>
+
+</html>

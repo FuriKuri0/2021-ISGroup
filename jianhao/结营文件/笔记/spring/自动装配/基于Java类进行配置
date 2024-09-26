@@ -1,0 +1,72 @@
+### 使用存Java类去配置，不使用xml的方式
+
+1.编写实体类
+
+```java
+@Component  //将这个类标注为Spring的一个组件，放到容器中！
+public class Dog {
+   public String name ;
+   
+   @Value("labuladuo")
+   public void setName(String name){
+   		this.name = name;
+   }
+}
+```
+
+2.创建一个config类，编写配置文件
+
+```java
+@Configuration  //代表这是一个配置类,也会注册到Spring中，因为他也是一个@Component
+public class MyConfig {
+
+   @Bean //通过方法注册一个bean，这里的返回值就Bean的类型，方法名就是bean的id！
+   public Dog dog(){
+       return new Dog();	//就是返回要注入到bean中的对象
+  }
+}
+```
+
+注意：方法上的@Bean，相当于xml中的一个bean标签。**<u>id为方法名，class属性为方法的返回值</u>**
+
+3.实例化测试
+
+```java
+@Test
+public void test2(){
+   ApplicationContext applicationContext =
+           new AnnotationConfigApplicationContext(MyConfig.class);
+   Dog dog = (Dog) applicationContext.getBean("dog");
+   System.out.println(dog.getName());
+}
+```
+
+注意：使用的是`AnnotationConfigApplicationContext`的注解配置方法，后跟(配置文件的class)
+
+
+
+## 导入其他配置
+
+现有另一个MyConfig2
+
+```java
+@Configuration
+public class MyConfig2{
+	...
+}
+```
+
+在MyConfig1中导入MyConfig2（使用@Import）
+
+```java
+@Configuration
+@Import(MyConfig2.class)  //导入合并其他配置类，类似于配置文件中的 inculde 标签
+public class MyConfig {
+
+   @Bean
+   public Dog dog(){
+       return new Dog();
+  }
+}
+```
+

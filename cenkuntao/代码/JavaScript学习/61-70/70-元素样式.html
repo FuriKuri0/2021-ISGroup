@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="change"></div>
+    <button>change</button>
+    <script>
+        const change = document.querySelector(`.change`);
+        const btn = document.querySelector(`button`);
+
+        // change.style.width = `50px`;
+        // change.style.height = `50px`;
+        // change.style.backgroundColor = 'blue';
+        change.style.cssText = `width:50px;height:50px;background-color:blue`;
+
+        btn.addEventListener('click', () => {
+            console.log(change.style);
+            if (change.style.backgroundColor == `blue`) {
+                change.style.backgroundColor = `white`;
+            } else {
+                change.style.backgroundColor = `blue`;
+            }
+        })
+    </script>
+</body>
+
+</html>
